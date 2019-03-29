@@ -1,0 +1,8 @@
+{
+  "DATABASE": {
+    "user": "postgres",
+    "db_name": "database_name",
+    "password": "database_password",
+    "host": "localhost"
+  }
+}
