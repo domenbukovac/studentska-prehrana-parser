@@ -37,8 +37,8 @@ for restaurant_sp in cursor.fetchall():
     cursor.execute(query2)
 
     if (len(cursor.fetchall()) != 0):
-        counter += 1
-        print(counter)
+        # counter += 1
+        # print(counter)
         cursor.execute(query2)
         for match in cursor.fetchall():
             print("\n")

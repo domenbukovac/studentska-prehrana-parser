@@ -59,7 +59,7 @@ for restaurant in cursor.fetchall():
                 })
 
             for menu in menus:
-                title = menu.h5.strong.text.split("  ")[1].capitalize()
+                title = menu.h5.strong.text.split("  ")[1].replace('\t', '').capitalize()
                 tag = None
                 try:
                     tag = menu.find("img", attrs={"class" : "pull-right"}).attrs['title']
@@ -70,7 +70,7 @@ for restaurant in cursor.fetchall():
                 description_elements = menu.findAll("li")
 
                 for element in description_elements:
-                    description.append(element.i.text)
+                    description.append(element.i.text.replace('\t', ''))
                 
                 description_string = "\n".join(description)
                 print(title)
