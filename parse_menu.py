@@ -14,7 +14,7 @@ print(database["user"])
 
 
 try: # database config
-    connect_str = f"dbname='{database['db_name']}' user='{database['user']}' host='{database['host']}' password='{database['password']}'"
+    connect_str = f"dbname='{database['db_name']}' user='{database['user']}' host='{database['host']}' port='{database['port']}' password='{database['password']}'"
     conn = psycopg2.connect(connect_str)
     cursor = conn.cursor()
 except Exception as e:
@@ -33,7 +33,8 @@ cursor.execute("""SELECT sp_id, name FROM restaurants_sp""")
 weekday = today.weekday()
 
 # days left this week
-days_to_check =  7 - weekday
+# days_to_check =  7 - weekday
+days_to_check = 8
 
 # every restaurant id in database
 for restaurant in cursor.fetchall():

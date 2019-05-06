@@ -3,6 +3,7 @@
     "user": "postgres",
     "db_name": "database_name",
     "password": "database_password",
-    "host": "localhost"
+    "host": "localhost",
+    "port": "3456"
   }
 }
