@@ -1,17 +1,13 @@
-from urllib.request import urlopen as uReq
 from bs4 import BeautifulSoup as soup
 from time import sleep
 import psycopg2
 import requests
 import datetime
-
 import json
 
 # load database config from config
 with open('config.json') as json_data_file:
     database = json.load(json_data_file)["DATABASE"]
-print(database["user"])
-
 
 try: # database config
     connect_str = f"dbname='{database['db_name']}' user='{database['user']}' host='{database['host']}' port='{database['port']}' password='{database['password']}'"
