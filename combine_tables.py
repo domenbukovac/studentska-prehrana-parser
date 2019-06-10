@@ -1,9 +1,13 @@
 import psycopg2
 import json
 import sys
+import os
+
+dirname = os.path.dirname(__file__)
+config_file = os.path.join(dirname, 'config.json')
 
 # load database config from config
-with open('config.json') as json_data_file:
+with open(config_file) as json_data_file:
     database = json.load(json_data_file)["DATABASE"]
 print(database["user"])
 

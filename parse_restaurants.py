@@ -4,10 +4,14 @@ from time import sleep
 import psycopg2
 
 from decimal import Decimal
-
 import json
+import os
 
-with open('config.json') as json_data_file:
+dirname = os.path.dirname(__file__)
+config_file = os.path.join(dirname, 'config.json')
+
+
+with open(config_file) as json_data_file:
     database = json.load(json_data_file)["DATABASE"]
 print(database["user"])
 
